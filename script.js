@@ -11,7 +11,7 @@ class InvalidValue extends Error {
         super(message);
         this.name = "InvalidValue";
     }
-}
+} // Handles invalid values
 function ValidateValue(num) {
     if (typeof num !== 'number') {
         throw new InvalidValue("Input is not a number.");
@@ -23,7 +23,7 @@ function ValidateValue(num) {
         throw new InvalidValue("Number is greater than 100.");
     }
     return true;
-}
+} // Handles values between 0 and 100 and throws custom exceptions for values that don't fit this criteria
 try {
     ValidateValue(2024);
 } catch (error) {
@@ -33,4 +33,4 @@ try {
     else {
         console.error("General Error:", error.message);
     }
-}
+} // Handles custom and general errors using try-catch blocks
